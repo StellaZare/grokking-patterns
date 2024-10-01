@@ -26,12 +26,15 @@ class Solution
      * Logic/Think through:
      *      Very similar to the "longest substring with K distinct letters" but K = 2
      *      For each tree in the array
-     *      if the tree has been picked: do nothing
-     *      if the tree has not been picked: add the tree to the set of picked
-     *      if the set of picked trees is greater than 2: 
-     *          check the number of picked fruits and compare with the running max
-     *          remove the front trees
-     */
+     *          Pick the fruit at the end and increment the map
+     *          While over the threshold 
+     *              Remove the fruit at the front and increment front ptr
+     *              Remove the tree if the last fruit
+     *          Update the length
+     *      
+     * Time Complexity: O(N)
+     * Space Complexity: O(1)
+    */
     int findLength( const std::vector<char> & arr)
     {
         int maxFruit = INT_MIN;

@@ -21,12 +21,12 @@ class Solution
      * Logic:
      *      use a map to keep track of the 'seen' character
      *      Start and end interval at idx 0
-     *      If character in map then seen. 
-     *          Increment back and look at the next character.
-     *      Else unseen and distinct count incements.
-     *          If distinct count > K
-     *          Check if length is longest seen yet
-     *          Remove the letter at front from the map and increment front until you reach the next letter.
+     *      For each letter:
+     *          Consume the letter at the back ptr & incrment the count in the map
+     *          While over the threshold:
+     *              Remove the letter at the front from map and increment the front ptr
+     *              If removing the last occurance of the letter then erase the letter
+     *          Update max length if needed
      * 
      * Time Complexity: O(N)
      * Space Complexity: O(1)
