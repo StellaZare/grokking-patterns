@@ -35,37 +35,26 @@ class Solution
     {
         std::unordered_map<char, int> seenCharacters {};
 
-        int front = 0; 
-        int back = 0;
+        int frontPtr = 0; 
         int maxLength = INT_MIN;
-        int numDistinct = 0;
 
-        while (back < str.size())
+        for (int backPtr = 0; backPtr < str.size(); backPtr++)
         {
-            // character not in substring -> increment num distinct
-            if (seenCharacters.find(str.at(back)) == seenCharacters.end())
-            {   
-                numDistinct++;
-            }
+            // Add the current char to the seen characters
+            char current = str.at(backPtr);
+            seenCharacters[current]++;
 
-            if (numDistinct > k)
+            // Check if seen more characters than permitted
+            while (seenCharacters.size() > k)
             {
-                // calculate the current subtring length
-                int length = back - front + 1;
-                if (length > maxLength) maxLength = length;
-
-                // slide the window eliminating the front character
-                char currentFront = str.at(front);
-                while (front < str.size() && str.at(front) == currentFront)
-                {
-                    front++;
-                }
-
-                // remove front character from seen chars
-                seenCharacters.erase(currentFront);
-                numDistinct--;
+                // Forget the front character
+                char forget = str.at(frontPtr++);
+                seenCharacters.at(forget)--;
+                if (seenCharacters.at(forget) == 0) seenCharacters.erase(forget);
             }
-            back++;
+
+            int currentLength = backPtr - frontPtr + 1;
+            maxLength = std::max (maxLength, currentLength);
         }
         return maxLength;
     }
@@ -79,5 +68,5 @@ int main(int argc, char *argv[])
     std::cout << "Length of the longest substring: "
         << sol.findLength("araaci", 1) << std::endl;
     std::cout << "Length of the longest substring: "
-        << sol.findLength("cbbebi", 3) << std::endl;
+        << sol.findLength("aabacbebebe", 3) << std::endl;
 }
