@@ -69,9 +69,9 @@ class Solution
 int main(int argc, char *argv[])
 {
     Solution sol;
-    std::vector<char> v1 {'A', 'B', 'C', 'A', 'C'};
-    std::vector<char> v2 {'A', 'B', 'C', 'B', 'B', 'C'};
-    std::vector<char> v3 {'A', 'B', 'A', 'B', 'B', 'C'};
+    std::vector<char> v1 = {'A', 'B', 'C', 'A', 'C'};
+    std::vector<char> v2 = {'A', 'B', 'C', 'B', 'B', 'C'};
+    std::vector<char> v3 = {'A', 'B', 'A', 'B', 'B', 'C'};
 
     std::cout << "Maximum number of fruits: " << sol.findLength(v1) << std::endl;
     std::cout << "Maximum number of fruits: " << sol.findLength(v2) << std::endl;

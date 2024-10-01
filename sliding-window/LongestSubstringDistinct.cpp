@@ -56,6 +56,8 @@ class Solution
             int currentLength = backPtr - frontPtr + 1;
             maxLength = std::max (maxLength, currentLength);
         }
+
+        if (maxLength == INT_MIN) return str.size();
         return maxLength;
     }
 };
