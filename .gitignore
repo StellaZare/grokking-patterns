@@ -34,3 +34,4 @@
 # Addons
 */build
 .vscode
+.DS_Store
