@@ -31,6 +31,9 @@ class Solution {
      *      if only 1 interval then return true
      *      first sort the list of intervals by their start time
      *      then check that for each interval (a,b) from idx 1 to the end and the prev interval (a', b'): if a <= b' return false
+     * 
+     * Time Complexity: O(NlogN)
+     * Space Complexity: O(1)
      */
     bool canAttendAllAppointments(std::vector<Interval>& intervals) {
         // list of 0 or 1 trivially no overlap

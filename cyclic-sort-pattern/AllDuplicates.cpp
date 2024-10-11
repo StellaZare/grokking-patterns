@@ -34,6 +34,9 @@ class Solution {
      *          if e != i+1 
      *              the element at this index = [i+1] was not found
      *              the elent currently in index i is a duplicate
+     * 
+     * Time Complexity: O(N)
+     * Space Complexity: O(N) for the list of duplicates
      */
     std::vector<int> findNumbers(std::vector<int> &nums) { 
         std::vector<int> duplicateNumbers;
