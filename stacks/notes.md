@@ -32,3 +32,13 @@ s.pop();      // Return void
 s.top();      // Return reference
 s.empty();    // Returns bool
 ```
+
+Intoduction to Monotonic Stacks
+------------------------------------------------------------------
+- Special type of stack, which maintains a specific ordering of elements. 
+- Ensures a de/increasing order of elements by enforcing push/pop rules
+- Especially useful for "Next smaller/larger" element problems
+
+Types of MS
+1. Monotonically Increasing: element values increasing i.e. largest value at the top
+2. Monotonically Decreasing: element values decreasing i.e. smallest value at the top
